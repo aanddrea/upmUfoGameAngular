@@ -1,0 +1,25 @@
+<div id="recPage">
+    <div class="list-container">
+        <h1 class="title-text">Records</h1>
+        <table>
+            <thead>
+                <tr class="col-text">
+                    <th>User</th>
+                    <th>Points</th>
+                    <th>UFOs</th>
+                    <th>Secs</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let record of records">
+                    <td>{{ record.username }}</td>
+                    <td>{{ record.punctuation }}</td>
+                    <td>{{ record.ufos }}</td>
+                    <td>{{ record.disposedTime }}</td>
+                    <td>{{ record.recordDate | date: 'dd/MM/yyyy' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

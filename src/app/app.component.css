@@ -1,0 +1,39 @@
+:host {
+    display: block;
+  }
+  #upmlogo{height:45px;display:inline;margin-top: -13px;opacity:0.9}
+  
+  #menu { top:10px;left:10px;
+    background-color: #FFEE93; color:#0000FF
+  }
+  .navbar a {
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    color:  #65cce6;
+    text-align: center;
+    padding: 14px 16px;
+    margin-top: 5px;
+  }
+  .navbar .nav-text {
+    display: inline-block;
+    color: #000;
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  .navbar .right-options {
+    float: right;
+  }
+  .navbar img {
+    margin-right: 5px;
+    display: inline-block;
+  }
+  .navbar a:hover {
+    background-color: #FCF5C7;
+    color: #000;
+  }
+  .general { border: 1px solid blue; padding:25px }
+  .right-options {
+    float: right;
+  }
+  

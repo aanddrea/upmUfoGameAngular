@@ -1,0 +1,55 @@
+:host {
+  display: block;
+}
+.title-container {
+  margin-top: 10px;
+}
+
+.title-container img {
+  align-items: center;
+  margin-bottom: 20px; 
+  margin-right: 20px;
+}
+
+form {
+  width: 500px;
+  height: inherit;
+  padding: 20px;
+  border: 2px solid #ADF7B6;
+  border-radius: 10px;
+  background-color: #A0CED9;
+  margin-left: 100px;
+  margin-top: 20px;
+  align-self: center;
+}
+form div {
+  margin-bottom: 15px;
+  align-items: center;
+}
+form div.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 80px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ADF7B6;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #FFEE93;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FCF5C7;
+}

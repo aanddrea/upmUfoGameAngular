@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+#global {text-align:center; font-size: 20pt}
+.titulo {text-align:center; padding:0px;margin:0px;
+  font-size: 18pt; font-weight: bold; font-style: italic;}
+#first, second {display: inline}
+#upmlogo{height:45px;display:inline;margin-top: -13px;opacity:0.9}
+.active { font-weight: bold; font-style: italic }
+.general { border: 1px solid blue; padding:25px }
+.title-text {
+  color: #000;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-left: 100px;
+  font-style: italic;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
