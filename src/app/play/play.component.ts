@@ -41,10 +41,13 @@ export class PlayComponent implements OnInit{
   ngOnInit(): void {
     this.prefService.currentGameTime.subscribe(time => {
       this.gameTime = time;
+      console.log("game time "+ this.gameTime);
       this.startTime = time;
+      console.log("start time "+ this.startTime);
       this.mins = time / 60;
+      console.log("mins"+ this.mins);
     }); 
-    
+
   }
 
   ngAfterViewInit() {
@@ -162,10 +165,13 @@ export class PlayComponent implements OnInit{
   gameOver() {
     this.isGameOver = true;
     console.log("in game over"+ this.isGameOver);
-    this.cdr.markForCheck(); 
+    //start time and game time should not have changed?
+    console.log("mins"+ this.mins);
+    console.log("start time "+ this.startTime);
     clearInterval(this.ufoid); 
     this.finalScore = this.score / this.mins;
     this.points.nativeElement.innerHTML = `Final punctuation: ${this.finalScore}`;
+    this.cdr.markForCheck(); 
   }
 
   pullTrigger() {
@@ -175,18 +181,20 @@ export class PlayComponent implements OnInit{
 
   saveScore() {
     console.log('Score saved:', this.finalScore);
-    //post record (newrecord) {return this.http.post(baseurl)}
+    console.log("start time "+ this.startTime);
     const token = localStorage.getItem('token');
     console.log('the toekn:', token);
     this.scores.saveUserScore(this.finalScore, 1, this.startTime).subscribe({
       next: (response) => {
         console.log('response', response);
+        window.alert('your score: '+this.finalScore + ' was saved!');
       },
       error: (error) => {
         console.error('Registration error:', error);
         window.alert('Error while saving :(');
       }
     });
+    this.isGameOver = false;
   }
 
   updateGameTimeDisplay() {
