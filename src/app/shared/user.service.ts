@@ -20,5 +20,10 @@ export class UserService {
     const userData = { username, password, email };
     return this.http.post(url, userData, {observe: 'response' });
   }
+
+  checkDupe(username: string){
+    const url = `${config.base_url}/users/${username}`;
+    return this.http.get(url, {observe: 'response' });
+  }
   
 }

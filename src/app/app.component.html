@@ -19,7 +19,7 @@
         <img src="assets/imgs/record-icon.png" width="16px" height="16px" alt="Records Icon">Records
       </a>
       <div class="right-options">
-        <a routerLink="register" routerLinkActive="active">
+        <a *ngIf="!tokenMgr.isLoggedIn()" routerLink="register" routerLinkActive="active">
           <img src="assets/imgs/register-icon.png" width="16px" height="16px" alt="Register Icon">Register
         </a>
         <a  *ngIf="!tokenMgr.isLoggedIn()" routerLink="login" routerLinkActive="active">

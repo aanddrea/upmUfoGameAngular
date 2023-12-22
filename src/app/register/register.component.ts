@@ -24,26 +24,33 @@ export class RegisterComponent {
 
   constructor(private registerService: UserService) { }
 
+  onUsernameBlur() {
+    if (this.username) {
+      this.registerService.checkDupe(this.username)
+        .subscribe({
+          next: (response) => {
+            if(response.status == 200){
+              alert('Username is already taken');
+            }
+          },
+        });
+    }
+  }
+
   registerUser() {
     if(this.password != this.confirmPassword){
       alert("Passwords don't match");
       return;
-    }else{
-      // console.log('Username:', this.username);
-      // console.log('Email:', this.email);
-      // console.log('Password:', this.password);
-      
+    }
+    else{      
       this.registerService.register(this.username, this.password, this.email,)
       .subscribe({
         next: (response) => {
           console.log('User registered:', response);
-          //const locationHeader = response.headers.get('Location');
-          //console.log('Location of new resource:', locationHeader);
           window.alert('User registration successful');
         },
         error: (error) => {
           console.error('Registration error:', error);
-          window.alert('Error during registration');
         }
       });
     }
