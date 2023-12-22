@@ -1,0 +1,9 @@
+<div id="playPage">
+    <img #missile id='missile' src='assets/imgs/missile.png' style="left:300px;bottom:10px;height:70px;width:40px;z-index: 10;"/>
+    <img #ufo id='ufo' src='assets/imgs/ufo.png' style="left:0px;bottom:450px;width:60px;">
+    <div id="gameControls">
+        <div #points id="points">Points: 0</div>
+        <div #timer id="timer">Time left: 60 seconds</div>
+        <button #button id="save" (click)="saveScore()" [disabled]="!isGameOver">Save</button>
+    </div>
+</div> 

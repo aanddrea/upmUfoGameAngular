@@ -12,7 +12,7 @@
       <a routerLink="pref" routerLinkActive="active">
         <img src="assets/imgs/pref-icon.png" width="16px" height="16px" alt="Preferences Icon">Preferences
       </a>
-      <a>
+      <a routerLink="play" routerLinkActive="active">
         <img src="assets/imgs/play-icon.png" width="16px" height="16px" alt="Play Icon">Play
       </a>
       <a routerLink="records">
@@ -22,8 +22,11 @@
         <a routerLink="register" routerLinkActive="active">
           <img src="assets/imgs/register-icon.png" width="16px" height="16px" alt="Register Icon">Register
         </a>
-        <a routerLink="login" routerLinkActive="active">
+        <a  *ngIf="!tokenMgr.isLoggedIn()" routerLink="login" routerLinkActive="active">
           <img src="assets/imgs/login-icon.png" width="16px" height="16px" alt="Login Icon">Login
+        </a>
+        <a  *ngIf="tokenMgr.isLoggedIn()" routerLink="home-page" (click)="tokenMgr.clearToken()">
+          <img src="assets/imgs/logout-icon.png" width="16px" height="16px" alt="Login Icon">Logout
         </a>
       </div>
   </nav>

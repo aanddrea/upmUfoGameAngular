@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+#missile {
+  position: absolute;
+  bottom: 10px;
+  left: 300px;
+  height: 70px;
+}
+
+#ufo { 
+  position: absolute;
+  bottom: 375px;
+  left: 0px;
+}
+
+#gameControls {
+  position: fixed; 
+  bottom: 20px;
+  right: 20px;
+  width: 200px; /* adjust as needed */
+  padding: 10px;
+  background-color:#A0CED9;; /* semi-transparent black */
+  border: 2px solid #ADF7B6;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#points, #timer {
+  margin-bottom: 10px;
+}
+
+#save {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#save:disabled {
+  color: #aaa; 
+  background-color: #eee; 
+  cursor: not-allowed;
+  border: 1px solid #ddd;
+}

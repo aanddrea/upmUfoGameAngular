@@ -22,4 +22,28 @@
             </tbody>
         </table>
     </div>
+    <div *ngIf="tokenMgr.isLoggedIn()" class="list-container">
+        <h2 class="title-text">User Records</h2>
+        <table>
+          <thead>
+            <tr class="col-text">
+                <th>User</th>
+                <th>Points</th>
+                <th>UFOs</th>
+                <th>Secs</th>
+                <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let record of topRecords">
+                <td>{{ record.username }}</td>
+                <td>{{ record.punctuation }}</td>
+                <td>{{ record.ufos }}</td>
+                <td>{{ record.disposedTime }}</td>
+                <td>{{ record.recordDate | date: 'dd/MM/yyyy' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
 </div>

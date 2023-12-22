@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TokenmgrService } from './shared/tokenmgr.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'task2';
+
+  constructor(
+    public tokenMgr: TokenmgrService
+  ){}
+
 }

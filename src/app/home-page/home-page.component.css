@@ -1,12 +1,10 @@
 :host {
   display: block;
 }
-#miw_logo {align:right; width: 300px}
 #asig {font-style: italic; font-weight: bold; font-size: 24pt;}
 #cuerpo { 
   background-color: #FFC09F;
   border: 2px solid#65cce6;}
-
 .home-text {
     color: #000;
     font-size: 50px;

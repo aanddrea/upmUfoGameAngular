@@ -3,12 +3,14 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from "./home-page/home-page.component";
-import { LoginComponent } from "./login/login.component";
 import { RecordsComponent } from './records/records.component';
 import { PrefComponent } from "./pref/pref.component";
 import { HttpClientModule } from '@angular/common/http';
-import { RecordsService } from './records/records.service';
 import { RegisterComponent } from "./register/register.component";
+import { LoginComponent } from './login/login.component';
+import { UserService } from './shared/user.service';
+import { TokenmgrService } from './shared/tokenmgr.service';
+import { ScoresService } from './shared/scores.service';
 
 @NgModule({
     declarations: [
@@ -16,7 +18,9 @@ import { RegisterComponent } from "./register/register.component";
     ],
     providers: [
         provideClientHydration(),
-        RecordsService,
+        UserService,
+        ScoresService,
+        TokenmgrService,
     ],
     bootstrap: [AppComponent],
     imports: [

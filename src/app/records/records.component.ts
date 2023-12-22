@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RecordsService } from './records.service';
+import { ScoresService } from '../shared/scores.service';
+import { TokenmgrService } from '../shared/tokenmgr.service';
 
 @Component({
   selector: 'app-records',
@@ -13,15 +14,23 @@ import { RecordsService } from './records.service';
 })
 export class RecordsComponent implements OnInit {
   records: any[] = [];
+  topRecords: any[] = [];  
 
-  constructor(private recordsService: RecordsService) { }
+  constructor(
+    private scores: ScoresService,
+    public tokenMgr: TokenmgrService,
+  ){}
 
   ngOnInit(): void {
     this.getRecords();
+    if(localStorage.getItem('token') != null){
+      console.log(localStorage.getItem('username')+ " youre logged in");
+      this.getUserRecords();
+    }
   }
 
   getRecords(): void {
-    this.recordsService.getRecords()
+    this.scores.getRecords()
       .subscribe(
         (records: any[]) => {
           this.records = records;
@@ -30,5 +39,19 @@ export class RecordsComponent implements OnInit {
           console.error('Error fetching records:', error);
         }
       );
+  }
+  getUserRecords(): void{
+    const user = localStorage.getItem('username');
+    if(user){
+      this.scores.getUserRecords(user)
+      .subscribe(
+        (topRecords: any[]) => {
+          this.topRecords = topRecords;
+        },
+        error => {
+          console.error('Error fetching records:', error);
+        }
+      );
+  }
   }
 }

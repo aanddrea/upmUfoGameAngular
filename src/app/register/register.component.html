@@ -7,23 +7,24 @@
         <tbody>
             <tr>
                 <td>Username:</td>
-                <td><input type="text" id="username" name="username" required></td>
+                <td><input type="text" id="username" [(ngModel)]="username" name="username" required></td>
+                
             </tr>
             <tr>
                 <td>Email:</td>
-                <td><input type="email" id="email" name="email" required></td>
+                <td><input type="email" id="email" [(ngModel)]="email" name="email" required></td>
             </tr>
             <tr>
                 <td>Password:</td>
-                <td><input type="password" id="password" name="password" required></td>
+                <td><input type="password" id="password" [(ngModel)]="password"  name="password" required></td>
             </tr>
             <tr>
                 <td>Repeat Password:</td>
-                <td><input type="password" id="confirmPassword" name="confirmPassword" required></td>
+                <td><input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required></td>
             </tr>
         </tbody>
     </table>
     <div class="button-container">
-        <button type="button" id="registerBtn">Send</button>
+        <button type="button" id="registerBtn" (click)="registerUser()">Send</button>
     </div>
 </form>
